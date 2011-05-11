@@ -8,6 +8,10 @@ It tracks:
 
 You use it by typing:
 
-  cs <make target>
+  stats <make target>
 
 And you have to have a Makefile in the current directory.
+
+It saves the stats to a history.db in your current directory.
+
+Then you run dump to get the stats for the day.
