@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+
+$LOAD_PATH.unshift( File.expand_path File.dirname( __FILE__ ) )
+
+require "stats"
+
+
+history = History.load( "history.db" )
+File.open( "past.csv", "a+" ) do | csv |
+  now = Time.now.to_i
+  history.data.each_pair do | kind, samples |
+    properties = [ kind, samples.sum, samples.sumsq, samples.min, samples.max, samples.sd, samples.mean ]
+    puts properties.join( " " )
+    csv.puts( ( [ now ] + properties ).collect( &:to_s ).join( "," ) )
+  end
+end
