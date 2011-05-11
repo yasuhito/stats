@@ -1,0 +1,13 @@
+This will keep track of stats for you while you code.
+
+It tracks:
+
+  * compiler errors
+  * test failures
+  * times you attemted a compile
+
+You use it by typing:
+
+  cs <make target>
+
+And you have to have a Makefile in the current directory.
